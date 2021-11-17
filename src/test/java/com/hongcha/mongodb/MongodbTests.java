@@ -1,9 +1,9 @@
 package com.hongcha.mongodb;
 
-import com.hongcha.mongodb.annotation.Gt;
-import com.hongcha.mongodb.annotation.Regex;
+import com.hongcha.mongodb.core.annotation.Gt;
+import com.hongcha.mongodb.core.annotation.Regex;
+import com.hongcha.mongodb.core.service.UserService;
 import com.hongcha.mongodb.domain.User;
-import com.hongcha.mongodb.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,7 +24,7 @@ class MongodbTests {
         for (int i = 10; i <= 25; i++) {
             list.add(new User(UUID.randomUUID().toString(), "demo" + i + "号", 10 + i));
         }
-        userService.insertMulti(list);
+        userService.insertBatch(list);
     }
 
     //查找

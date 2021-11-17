@@ -1,0 +1,11 @@
+### mongodb工具类
+
+基于MongoDbTemplate，可根据对象的注解动态构造条件
+
+提供分页功能和BaseService
+
+#### 使用规范
+
+如果字段未标注任何ConditionsAnnotation注解,默认使用Eq,如果不需要使用任何处理器，请表明No注解,代表字段不使用ConditionsAnnotation,但可以同时标注OperatorAnnotation相关注解
+
+OperatorAnnotation相关注解在上一个field标准,当到下一个field时候就会切换到新的Criteria中
